@@ -29,5 +29,7 @@ Exista un singur cont de admin, crearea de conturi noi nefiind permisa, deoarece
 Atat utilizatorii, cat si adminul pot folosi aceeasi fereastra de conectare, introducand credentialele destinate fiecarui cont.
 
 ## Tehnologii utilizate
-
+*  ReactJS 
+*  NodeJS 
+*  MySQL 
 ## Setup
