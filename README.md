@@ -32,4 +32,8 @@ Atat utilizatorii, cat si adminul pot folosi aceeasi fereastra de conectare, int
 *  ReactJS 
 *  NodeJS 
 *  MySQL 
+
+## Wireframe
+Link catre wireframe: https://app.uizard.io/prototypes/Qrx1nY5vJJunVWmXRYjZ
+
 ## Setup
