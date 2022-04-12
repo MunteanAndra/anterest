@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import logoanterest from './logoanterest.jpeg';
 import Login from './Pages/Login';
+import Register from './Pages/Register';
 import {BrowserRouter} from 'react-router-dom';
 import { Switch } from 'react-router-dom'
 
@@ -28,6 +29,7 @@ function App() {
       <Switch>
 
       <Route path='/Login'component={Login}/>
+      <Route path='/Register'component={Register}/>
 
       </Switch>
       </Router>
