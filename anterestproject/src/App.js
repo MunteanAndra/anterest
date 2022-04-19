@@ -1,10 +1,11 @@
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route, Redirect} from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
 import logoanterest from './logoanterest.jpeg';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
 import {BrowserRouter} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import { Switch } from 'react-router-dom'
 
 
@@ -24,6 +25,12 @@ function App() {
             >
               Learn React
             </a>
+
+            <ul>
+            <li><a href="/Login">Login</a></li>
+            <li><a href="/Register">Register</a></li>
+            </ul>
+
           </header>
       <Router>
       <Switch>
