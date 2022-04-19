@@ -20,6 +20,7 @@ export default function Register() {
   return (
     <div className="Register">
       <Form onSubmit={handleSubmit}>
+      <div className="nume">
       <Form.Group size="lg" controlId="nume">
                 <Form.Label>Nume</Form.Label>
                 <Form.Control
@@ -29,6 +30,8 @@ export default function Register() {
                   onChange={(e) => setNume(e.target.value)}
       />
       </Form.Group>
+      </div>
+      <div className="prenume">
          <Form.Group size="lg" controlId="prenume">
                    <Form.Label>Prenume</Form.Label>
                    <Form.Control
@@ -38,6 +41,8 @@ export default function Register() {
                      onChange={(e) => setPrenume(e.target.value)}
                    />
        </Form.Group>
+       </div>
+       <div className="email">
         <Form.Group size="lg" controlId="email">
           <Form.Label>Email</Form.Label>
           <Form.Control
@@ -47,6 +52,8 @@ export default function Register() {
             onChange={(e) => setEmail(e.target.value)}
           />
         </Form.Group>
+        </div>
+        <div className="password">
         <Form.Group size="lg" controlId="password">
           <Form.Label>Password</Form.Label>
           <Form.Control
@@ -55,9 +62,12 @@ export default function Register() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
+        </div>
+        <div className="buton">
         <Button block size="lg" type="submit" disabled={!validateForm()}>
           Register
         </Button>
+        </div>
       </Form>
     </div>
   );
