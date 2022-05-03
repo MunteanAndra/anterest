@@ -23,11 +23,12 @@ function App() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Learn React
+              Welcome to ANTEREST!
             </a>
 
-            <ul>
+            <ul className="Options">
             <li><a href="/Login">Login</a></li>
+            <text>or</text>
             <li><a href="/Register">Register</a></li>
             </ul>
 
