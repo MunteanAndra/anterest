@@ -30,6 +30,9 @@ function App() {
             <li><a href="/Login">Login</a></li>
             <text>or</text>
             <li><a href="/Register">Register</a></li>
+            <li><a href="/">Photos</a></li>
+            <li><a href="/">Uploads</a></li>
+            <li><a href="/">Favourites</a></li>
             </ul>
 
           </header>
