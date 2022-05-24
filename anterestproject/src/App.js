@@ -4,6 +4,7 @@ import './App.css';
 import logoanterest from './logoanterest.jpeg';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
+import Photos from './Pages/Photos';
 import {BrowserRouter} from 'react-router-dom';
 import {Link} from 'react-router-dom';
 import { Switch } from 'react-router-dom'
@@ -30,7 +31,7 @@ function App() {
             <li><a href="/Login">Login</a></li>
             <text>or</text>
             <li><a href="/Register">Register</a></li>
-            <li><a href="/">Photos</a></li>
+            <li><a href="/Photos">Photos</a></li>
             <li><a href="/">Uploads</a></li>
             <li><a href="/">Favourites</a></li>
             </ul>
@@ -41,6 +42,7 @@ function App() {
 
       <Route path='/Login'component={Login}/>
       <Route path='/Register'component={Register}/>
+      <Route path='/Photos'component={Photos}/>
 
       </Switch>
       </Router>
@@ -49,3 +51,4 @@ function App() {
 }
 
 export default App;
+
