@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
-import "./Login.css";
+import "./Register.css";
 import Form from 'react-bootstrap/Form'
 
-export default function Login() {
+export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [nume, setNume] = useState("");
+  const [prenume, setPrenume] = useState("");
 
   function validateForm() {
     return email.length > 0 && password.length > 0;
@@ -16,9 +18,31 @@ export default function Login() {
   }
 
   return (
-    <div className="Login">
+    <div className="Register">
       <Form onSubmit={handleSubmit}>
-      <div className="email">
+      <div className="nume">
+      <Form.Group size="lg" controlId="nume">
+                <Form.Label>Nume</Form.Label>
+                <Form.Control
+                  autoFocus
+                  type="nume"
+                  value={nume}
+                  onChange={(e) => setNume(e.target.value)}
+      />
+      </Form.Group>
+      </div>
+      <div className="prenume">
+         <Form.Group size="lg" controlId="prenume">
+                   <Form.Label>Prenume</Form.Label>
+                   <Form.Control
+                     autoFocus
+                     type="prenume"
+                     value={prenume}
+                     onChange={(e) => setPrenume(e.target.value)}
+                   />
+       </Form.Group>
+       </div>
+       <div className="email">
         <Form.Group size="lg" controlId="email">
           <Form.Label>Email</Form.Label>
           <Form.Control
@@ -39,9 +63,9 @@ export default function Login() {
           />
         </Form.Group>
         </div>
-        <div className="button">
+        <div className="buton">
         <Button block size="lg" type="submit" disabled={!validateForm()}>
-          Login
+          Register
         </Button>
         </div>
       </Form>
