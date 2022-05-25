@@ -1,0 +1,42 @@
+.Register{
+border: 2px solid orange;
+  border-radius: 4px;
+  background-color: #DBA25C;
+  center: 25px;
+  margin: 50px;
+}
+
+.nume{
+ margin: auto;
+  width: 50%;
+  border: 3px solid orange;
+  padding: 10px;
+
+}
+
+.prenume{
+ margin: auto;
+  width: 50%;
+  border: 3px solid orange;
+  padding: 10px;
+}
+.email{
+ margin: auto;
+  width: 50%;
+  border: 3px solid orange;
+  padding: 10px;
+}
+
+.password{
+ margin: auto;
+  width: 50%;
+  border: 3px solid orange;
+  padding: 10px;
+}
+
+.buton{
+ margin: auto;
+  width: 50%;
+  margin-left: 600px;
+  padding: 20px;
+}
