@@ -62,6 +62,7 @@ export default function Foto() {
           and only contains 5 ingredients!"
       />
 
+
     </div>
   );
 }

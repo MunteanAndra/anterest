@@ -7,7 +7,9 @@ const cors = require("cors")
 const bodyParser = require("body-parser")
 const cookieParser = require("cookie-parser")
 const session = require("express-session")
+const bcrypt=require('bcrypt')
 
+const saltRounds=10
 
 
 app.use(express.json());
@@ -25,4 +27,36 @@ const db = mysql.createConnection({
     host: 'localhost',
     password: 'anterest',
     database: "anterest",
+})
+db.connect(function (err) {
+    if (err) {
+        return console.error('error: ' + err.message);
+    }
+    console.log('Connected to the MySQL server.');
+})
+
+app.post('/register', (req,res)=>{
+
+    const Nume = req.body.nume
+    const Prenume = req.body.prenume
+    const Password = req.body.password
+    const Email = req.body.email
+
+
+
+    bcrypt.hash(Password,saltRounds,(err, hash) =>{
+        if (err){
+            console.log(err)
+        }
+        db.query(
+            "INSERT INTO register (nume, prenume, email,password) VALUES (?,?,?,?)", [Nume,Prenume,Email,hash],
+            (err, result)=>{
+                console.log(err)
+            }
+        )
+    })
+
+})
+app.listen(3001, ()=> {
+    console.log("server running");
 })

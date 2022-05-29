@@ -2,12 +2,24 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import "./Register.css";
 import Form from 'react-bootstrap/Form'
+import Axios from 'axios';
 
 export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [nume, setNume] = useState("");
   const [prenume, setPrenume] = useState("");
+
+  const register = () =>{
+      Axios.post('http://localhost:3001/register', {
+        nume: nume,
+        prenume: prenume,
+        email: email,
+        password: password
+      }).then((response)=>{
+        console.log(response)
+      });
+    }
 
   function validateForm() {
     return email.length > 0 && password.length > 0;
@@ -64,7 +76,7 @@ export default function Register() {
         </Form.Group>
         </div>
         <div className="buton">
-        <Button block size="lg" type="submit" disabled={!validateForm()}>
+        <Button block size="lg" type="submit" disabled={!validateForm()} onClick={register}>
           Register
         </Button>
         </div>
