@@ -10,7 +10,7 @@ import {Link} from 'react-router-dom';
 import { Switch } from 'react-router-dom'
 import Navbar from "./Components/Navbar"
 import Footer from './Components/Footer';
-
+import HamburgerMenu from './Pages/HamburgerMenu';
 
 function App() {
   return (
@@ -27,19 +27,10 @@ function App() {
             >
               Welcome to ANTEREST!
             </a>
-
-            <ul className="Options">
-            <li><a href="/Login">Login</a></li>
-            <text>or</text>
-            <li><a href="/Register">Register</a></li>
-            <li><a href="/Photos">Photos</a></li>
-            <li><a href="/">Uploads</a></li>
-            <li><a href="/">Favourites</a></li>
-            </ul>
-
           </header>
 
       <Router>
+      <HamburgerMenu />
          <Footer />
       <Switch>
       <Route path='/Photos'component={Photos}/>

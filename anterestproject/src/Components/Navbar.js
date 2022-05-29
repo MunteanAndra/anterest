@@ -6,7 +6,7 @@ const Navbar= () =>{
   return (
   <div class="navbar">
     <li>
-      <Link to="/Photos">Photos</Link>
+
     </li>
   </div>
   );

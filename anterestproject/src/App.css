@@ -6,7 +6,7 @@
   height: 20vmin;
   pointer-events: none;
   margin-right: 80%;
-  margin-top: 5%;
+  top: 1rem;
 }
 
 @media (prefers-reduced-motion: no-preference) {
