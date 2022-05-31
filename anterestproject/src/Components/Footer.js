@@ -10,6 +10,7 @@ import {
 
 const Footer = () => {
 return(
+  <body>
   <div className="Footer">
     <h4>&copy; 2022 IC Project</h4>
     <h4>Muntean Andra & Netedu Anemona</h4>
@@ -31,7 +32,7 @@ return(
                 <FontAwesomeIcon icon={faInstagram} size="2x" />
              </a>
   </div>
-
+    </body>
 
 );
 }
