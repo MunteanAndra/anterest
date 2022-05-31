@@ -11,6 +11,7 @@ import { Switch } from 'react-router-dom'
 import Navbar from "./Components/Navbar"
 import Footer from './Components/Footer';
 import HamburgerMenu from './Pages/HamburgerMenu';
+import SearchBar from './Components/SearchBar';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             >
               Welcome to ANTEREST!
             </a>
+
           </header>
 
       <Router>

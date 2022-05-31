@@ -3,82 +3,33 @@ import * as ReactDOM from 'react-dom';
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import "./Photos.css";
+import pexels from '../Components/Pexels';
+import SearchBar from '../Components/SearchBar';
+import ImageList from '../Components/ImageList';
 
-export default function Foto() {
-  return (
-    <div className="wrapper">
-      <Card
-        img="https://images.unsplash.com/photo-1536304929831-ee1ca9d44906?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ"
-        title="The Everyday Salad"
-        description="Take your boring salads up a knotch. This recipe is perfect for lunch
-          and only contains 5 ingredients!"
-      />
+class Photos extends React.Component {
+    state = { photos: [] };
 
-      <Card
-        img="https://images.unsplash.com/photo-1529928520614-7c76e2d99740?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ"
-        title="Baked Cod with Vegetables"
-        description="Baked Cod with Vegetables. 30 minute meal!"
-      />
+    onSearchSubmit = async (term) => {
+        const response = await pexels.get(`/v1/search`, {
+            params: {
+                query: term,
+                per_page: 100,
+                page: 1
+            }
+        });
 
-      <Card
-      img="https://images.unsplash.com/photo-1536304929831-ee1ca9d44906?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ"
-      title="The Everyday Salad"
-      description="Take your boring salads up a knotch. This recipe is perfect for lunch
-      and only contains 5 ingredients!"
-            />
+        this.setState({ photos: response.data.photos });
+    }
 
-      <Card
-      img="https://images.unsplash.com/photo-1536304929831-ee1ca9d44906?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ"
-      title="The Everyday Salad"
-      description="Take your boring salads up a knotch. This recipe is perfect for lunch
-        and only contains 5 ingredients!"
-    />
-
-      <Card
-      img="https://images.unsplash.com/photo-1536304929831-ee1ca9d44906?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ"
-      title="The Everyday Salad"
-      description="Take your boring salads up a knotch. This recipe is perfect for lunch
-        and only contains 5 ingredients!"
-    />
-
-       <Card
-        img="https://images.unsplash.com/photo-1536304929831-ee1ca9d44906?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ"
-        title="The Everyday Salad"
-        description="Take your boring salads up a knotch. This recipe is perfect for lunch
-          and only contains 5 ingredients!"
-      />
-
-      <Card
-      img="https://images.unsplash.com/photo-1536304929831-ee1ca9d44906?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ"
-      title="The Everyday Salad"
-      description="Take your boring salads up a knotch. This recipe is perfect for lunch
-        and only contains 5 ingredients!"
-    />
-
-       <Card
-        img="https://images.unsplash.com/photo-1536304929831-ee1ca9d44906?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ"
-        title="The Everyday Salad"
-        description="Take your boring salads up a knotch. This recipe is perfect for lunch
-          and only contains 5 ingredients!"
-      />
-
-
+    render() {
+    return (
+    <div className="container" style={{marginTop: '10px'}}>
+        <SearchBar onSubmit={this.onSearchSubmit}/>
+        <ImageList images={this.state.photos} />
     </div>
-  );
+    );
+    };
 }
 
-function Card(props) {
-  return (
-    <div className="card">
-      <div className="cardbody">
-        <img src={props.img} alt="description" class="cardimage" />
-        <h2 className="cardtitle">{props.title}</h2>
-        <p className="carddescription">{props.description}</p>
-      </div>
-      <button className="cardbtn">View Recipe</button>
-    </div>
-  );
-}
-
-ReactDOM.render(<Foto/>, document.getElementById("root"));
-
+export default Photos;
