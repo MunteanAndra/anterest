@@ -2,8 +2,10 @@
 border: 2px solid orange;
   border-radius: 4px;
   background-color: #DBA25C;
-  center: 25px;
+
   margin: 50px;
+  padding-top:25px;
+display: block;
 }
 
 .nume{

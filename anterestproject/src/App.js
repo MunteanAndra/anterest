@@ -12,35 +12,20 @@ import Navbar from "./Components/Navbar"
 import Footer from './Components/Footer';
 import HamburgerMenu from './Pages/HamburgerMenu';
 import SearchBar from './Components/SearchBar';
-
+import Home from './Pages/Home';
 function App() {
   return (
     <div>
-    <Navbar />
-    <header className="App-header">
-            <img src={logoanterest} className="App-logo" alt="logo" />
 
-            <a
-              className="App-link"
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Welcome to ANTEREST!
-            </a>
-
-          </header>
-
-      <Router>
+    <Router>
+      <Navbar />
       <HamburgerMenu />
-
-      <Switch>
-      <Route path='/Photos'component={Photos}/>
-      <Route path='/Register'component={Register}/>
-      <Route path='/Login'component={Login}/>
-      </Switch>
+      <Route path='/' exact component={Home}/>
+      <Route  path='/Photos'exact component={Photos}/>
+      <Route  path='/Register' exact component={Register}/>
+      <Route  path='/Login' exact component={Login}/>
       <Footer />
-      </Router>
+    </Router>
     </div>
   );
 }
