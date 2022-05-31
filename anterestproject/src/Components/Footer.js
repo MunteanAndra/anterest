@@ -8,7 +8,8 @@ import {
   faInstagram
 } from "@fortawesome/free-brands-svg-icons";
 
-const Footer = () => (
+const Footer = () => {
+return(
   <div className="Footer">
     <h4>&copy; 2022 IC Project</h4>
     <h4>Muntean Andra & Netedu Anemona</h4>
@@ -33,5 +34,5 @@ const Footer = () => (
 
 
 );
-
+}
 export default Footer;

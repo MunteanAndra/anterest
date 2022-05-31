@@ -20,7 +20,7 @@ export default function Login() {
       <Form onSubmit={handleSubmit}>
       <div className="email">
         <Form.Group size="lg" controlId="email">
-          <Form.Label>Email</Form.Label>
+          <Form.Label>Email          </Form.Label>
           <Form.Control
             autoFocus
             type="email"
@@ -40,7 +40,7 @@ export default function Login() {
         </Form.Group>
         </div>
         <div className="button">
-        <Button block size="lg" type="submit" disabled={!validateForm()}>
+        <Button block size="lg" type="submit" able={!validateForm()}>
           Login
         </Button>
         </div>

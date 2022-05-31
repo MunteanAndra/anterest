@@ -76,7 +76,7 @@ export default function Register() {
         </Form.Group>
         </div>
         <div className="buton">
-        <Button block size="lg" type="submit" disabled={!validateForm()} onClick={register}>
+        <Button block size="lg" type="submit" able={!validateForm()} onClick={register}>
           Register
         </Button>
         </div>
