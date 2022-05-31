@@ -33,12 +33,13 @@ function App() {
 
       <Router>
       <HamburgerMenu />
-         <Footer />
+
       <Switch>
       <Route path='/Photos'component={Photos}/>
       <Route path='/Register'component={Register}/>
       <Route path='/Login'component={Login}/>
       </Switch>
+      <Footer />
       </Router>
     </div>
   );

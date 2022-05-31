@@ -12,7 +12,7 @@ const Footer = () => (
   <div className="Footer">
     <h4>&copy; 2022 IC Project</h4>
     <h4>Muntean Andra & Netedu Anemona</h4>
-    <h3>Social Follow</h3>
+
             <a href=""
               className="youtube social">
               <FontAwesomeIcon icon={faYoutube} size="2x" />
