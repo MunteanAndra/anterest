@@ -10,6 +10,7 @@ function Home() {
     <header className="logo">
             <img src={anterest} className="App-logo" alt="logo" />
           </header>
+
           <div className="animate">
     <div className="text1">Who do you call for curious ants?</div>
     <div className="text2">
