@@ -27,7 +27,8 @@ class Photos extends React.Component {
     <div className="container" style={{marginTop: '10px'}}>
 
         <SearchBar onSubmit={this.onSearchSubmit}/>
-        <div className="mygallery">
+        <ImageList images={this.state.photos} />
+        <div className="mygallery" >
         <img src="dalmatian.jpg" />
         <img src="Camille Przewodek.jpg" />
         <img src="Bycicle.jpg" />
@@ -45,7 +46,6 @@ class Photos extends React.Component {
         <img src="HighKitchen.jpg" />
         <img src="Pizza.jpg" />
         </div>
-        <ImageList images={this.state.photos} />
     </div>
     );
     };

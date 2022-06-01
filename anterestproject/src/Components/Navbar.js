@@ -6,7 +6,9 @@ const Navbar= () =>{
   return (
   <div class="navbar">
     <li>
-
+    <Link to="/">
+       <img className="image" src="ant-cartoon.png" />
+    </Link>
     </li>
   </div>
   );
