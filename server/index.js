@@ -14,12 +14,12 @@ const saltRounds=10
 
 app.use(express.json());
 app.use(cors({
-    origin:["http://localhost:3000"],
+    origin:["http://localhost:3001"],
     methods:["GET","POST"],
     credentials: true
 }));
 app.use(cookieParser())
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(express.urlencoded({extended:true}));
 
 
 const db = mysql.createConnection({
@@ -44,19 +44,29 @@ app.post('/register', (req,res)=>{
 
 
 
-    bcrypt.hash(Password,saltRounds,(err, hash) =>{
-        if (err){
-            console.log(err)
-        }
         db.query(
-            "INSERT INTO register (nume, prenume, email,password) VALUES (?,?,?,?)", [Nume,Prenume,Email,hash],
+            "INSERT INTO register (nume, prenume, email,password) VALUES (?,?,?,?)", [Nume,Prenume,Email,Password],
             (err, result)=>{
                 console.log(err)
             }
         )
-    })
+
 
 })
+
+app.post("/user", (req, res) => {
+  db.query("SELECT * FROM register WHERE email=? and password=?", [email, password],
+   (err, result) => {
+    if (err) {
+      console.log(err);
+    } else if(result){
+      res.send(result);
+    }
+    else{
+    res.send({message:"wrong comb"});
+    }
+  });
+});
 app.listen(3001, ()=> {
     console.log("server running");
 })

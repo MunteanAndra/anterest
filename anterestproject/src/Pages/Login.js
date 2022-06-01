@@ -2,10 +2,19 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import "./Login.css";
 import Form from 'react-bootstrap/Form'
-
+import Axios from 'axios';
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+   const login = () =>{
+        Axios.post('http://localhost:3001/login', {
+          email: email,
+          password: password
+        }).then((response)=>{
+          console.log(response)
+        });
+      }
 
   function validateForm() {
     return email.length > 0 && password.length > 0;
@@ -40,7 +49,7 @@ export default function Login() {
         </Form.Group>
         </div>
         <div className="button">
-        <Button block size="lg" type="submit" able={!validateForm()}>
+        <Button block size="lg" type="submit" able={!validateForm()} onClick={login}>
           Login
         </Button>
         </div>
