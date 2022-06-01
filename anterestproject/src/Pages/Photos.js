@@ -6,6 +6,7 @@ import "./Photos.css";
 import pexels from '../Components/Pexels';
 import SearchBar from '../Components/SearchBar';
 import ImageList from '../Components/ImageList';
+import LikeButton from "../Components/LikeButton";
 
 class Photos extends React.Component {
     state = { photos: [] };
@@ -27,6 +28,7 @@ class Photos extends React.Component {
     <div className="container" style={{marginTop: '10px'}}>
 
         <SearchBar onSubmit={this.onSearchSubmit}/>
+        <LikeButton />
         <ImageList images={this.state.photos} />
         <div className="mygallery" >
         <img src="dalmatian.jpg" />
