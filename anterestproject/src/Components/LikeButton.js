@@ -8,7 +8,7 @@ export default function LikeButton(){
     return(
     <div className="Like">
     <span className="likebutton" onClick={() => setLike((prevLike) => !prevLike)}>
-    Like {like ? <img className="likebutton" src="favpng_heart-font-awesome-font.png" /> : <img className="likebutton" src="favpng_heart-emoji-love-android-oreo-emotion.png" />}
+     {like ? <img className="likebutton" src="favpng_heart-font-awesome-font.png" /> : <img className="likebutton" src="favpng_heart-emoji-love-android-oreo-emotion.png" />}
     </span>
     </div>
     );
